@@ -1,0 +1,103 @@
+{
+  "contract_version": "0.1",
+  "producer": {
+    "name": "MSTracker-synthetic-fixture",
+    "version": "0.1.0"
+  },
+  "source_instance_id": "00000000-0000-4000-8000-000000000001",
+  "exported_at": "2025-11-10T12:00:00Z",
+  "timezone": "America/Chicago",
+  "correlation_id": "00000000-0000-4000-8000-000000000007",
+  "records": [
+    {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "entity_type": "task_definition",
+      "instrument_id": "00000000-0000-4000-8000-000000000002",
+      "revision": 1,
+      "created_at": "2025-11-01T12:00:00Z",
+      "updated_at": "2025-11-02T07:30:00Z",
+      "change": "upsert",
+      "idempotency_key": "00000000-0000-4000-8000-000000000001:task_definition:00000000-0000-4000-8000-000000000003:1",
+      "external_reference": null,
+      "name": "Synthetic tube change",
+      "category": "routine",
+      "expected_minutes": 30,
+      "recurrence": {
+        "kind": "weekly",
+        "weekday": 6
+      }
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000004",
+      "entity_type": "task_occurrence",
+      "instrument_id": "00000000-0000-4000-8000-000000000002",
+      "revision": 1,
+      "created_at": "2025-11-01T12:00:00Z",
+      "updated_at": "2025-11-02T07:30:00Z",
+      "change": "upsert",
+      "idempotency_key": "00000000-0000-4000-8000-000000000001:task_occurrence:00000000-0000-4000-8000-000000000004:1",
+      "external_reference": null,
+      "task_id": "00000000-0000-4000-8000-000000000003",
+      "due_date": "2025-11-02",
+      "state": "completed",
+      "performed_event_id": "00000000-0000-4000-8000-000000000006",
+      "expected_minutes": 30
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000005",
+      "entity_type": "task_occurrence",
+      "instrument_id": "00000000-0000-4000-8000-000000000002",
+      "revision": 1,
+      "created_at": "2025-11-01T12:00:00Z",
+      "updated_at": "2025-11-02T07:30:00Z",
+      "change": "upsert",
+      "idempotency_key": "00000000-0000-4000-8000-000000000001:task_occurrence:00000000-0000-4000-8000-000000000005:1",
+      "external_reference": null,
+      "task_id": "00000000-0000-4000-8000-000000000003",
+      "due_date": "2025-11-09",
+      "state": "skipped",
+      "performed_event_id": null,
+      "expected_minutes": 30
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000006",
+      "entity_type": "performed_event",
+      "instrument_id": "00000000-0000-4000-8000-000000000002",
+      "revision": 1,
+      "created_at": "2025-11-01T12:00:00Z",
+      "updated_at": "2025-11-02T07:30:00Z",
+      "change": "upsert",
+      "idempotency_key": "00000000-0000-4000-8000-000000000001:performed_event:00000000-0000-4000-8000-000000000006:1",
+      "external_reference": null,
+      "task_id": "00000000-0000-4000-8000-000000000003",
+      "occurrence_id": "00000000-0000-4000-8000-000000000004",
+      "category": "routine",
+      "status": "on-time",
+      "occurred_at": "2025-11-02T07:30:00Z",
+      "original_local_time": "2025-11-02T01:30:00-06:00",
+      "original_timezone": "America/Chicago",
+      "original_fold": 1,
+      "expected_minutes": 30
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000006",
+      "entity_type": "performed_event",
+      "instrument_id": "00000000-0000-4000-8000-000000000002",
+      "revision": 1,
+      "created_at": "2025-11-01T12:00:00Z",
+      "updated_at": "2025-11-02T07:30:00Z",
+      "change": "upsert",
+      "idempotency_key": "00000000-0000-4000-8000-000000000001:performed_event:00000000-0000-4000-8000-000000000006:1",
+      "external_reference": null,
+      "task_id": "00000000-0000-4000-8000-000000000003",
+      "occurrence_id": "00000000-0000-4000-8000-000000000004",
+      "category": "routine",
+      "status": "on-time",
+      "occurred_at": "2025-11-02T07:30:00Z",
+      "original_local_time": "2025-11-02T01:30:00-06:00",
+      "original_timezone": "America/Chicago",
+      "original_fold": 1,
+      "expected_minutes": 30
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{% block title %}MSTracker{% endblock %} · {{ instrument.name }}</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><a class="brand" href="{{ url_for('web.calendar_view') }}"><span class="brand-icon" aria-hidden="true">M</span> MSTracker</a><span class="instrument">{{ instrument.name }} <span class="muted">/ {{ instrument.model }}</span></span>
+{% if user %}<div class="account"><span>{{ user.username }}</span><form method="post" action="{{ url_for('web.logout') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="quiet" type="submit">Log out</button></form></div>{% endif %}</header>
+{% if user %}<nav aria-label="Main navigation"><a {% if request.endpoint=='web.calendar_view' %}aria-current="page"{% endif %} href="{{ url_for('web.calendar_view') }}">Calendar</a><a {% if request.endpoint=='web.maintenance_log' %}aria-current="page"{% endif %} href="{{ url_for('web.maintenance_log') }}">Maintenance log</a><a {% if request.endpoint=='web.tasks' %}aria-current="page"{% endif %} href="{{ url_for('web.tasks') }}">Tasks</a><a class="button nav-action" href="{{ url_for('web.new_event') }}">+ Log maintenance</a></nav>{% endif %}
+<main id="main">{% for message in get_flashed_messages() %}<p class="success" role="status">{{ message }}</p>{% endfor %}{% block content %}{% endblock %}</main>
+<footer>Local instrument history <span aria-hidden="true">·</span> {{ instrument.timezone }} <span aria-hidden="true">·</span> Stored on this computer</footer></body></html>

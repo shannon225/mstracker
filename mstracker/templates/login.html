@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block title %}Sign in{% endblock %}{% block content %}
+<section class="login panel"><p class="eyebrow">YOUR INSTRUMENT, IN VIEW</p><h1>Welcome back.</h1><p class="muted">Sign in to record maintenance and see what’s been done.</p>
+{% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+<form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label for="username">Username</label><input id="username" name="username" autocomplete="username" required maxlength="80" value="{{ form.get('username','') }}"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="1024"><button type="submit">Sign in</button></form><p class="hint">Forgot your password? Ask the local instrument administrator to reset your account on this computer.</p></section>
+{% endblock %}

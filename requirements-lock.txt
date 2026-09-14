@@ -1,0 +1,11 @@
+# Runtime dependency set validated for the first round. Platform wheels differ.
+Flask==3.1.3
+Werkzeug==3.1.8
+waitress==3.0.2
+tzdata==2026.4
+blinker==1.9.0
+click==8.5.0
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+colorama==0.4.6; sys_platform == 'win32'
